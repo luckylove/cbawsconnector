@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://cba.avaya" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://cba.avaya" xmlns:intf="http://cba.avaya" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://cba.avaya" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getCBAStatus">
+    <complexType/>
+   </element>
+   <element name="getCBAStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="getCBAStatusReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="makeCall">
+    <complexType>
+     <sequence>
+      <element name="uui" type="xsd:string"/>
+      <element name="media" type="xsd:string"/>
+      <element name="contact" type="xsd:string"/>
+      <element name="agent" type="xsd:string"/>
+      <element name="alert" type="xsd:string"/>
+      <element name="userinfo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="makeCallResponse">
+    <complexType>
+     <sequence>
+      <element name="makeCallReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setResult">
+    <complexType>
+     <sequence>
+      <element name="uui" type="xsd:string"/>
+      <element name="result" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setResultResponse">
+    <complexType>
+     <sequence>
+      <element name="setResultReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setResultResponse">
+
+      <wsdl:part element="impl:setResultResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="makeCallResponse">
+
+      <wsdl:part element="impl:makeCallResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setResultRequest">
+
+      <wsdl:part element="impl:setResult" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCBAStatusResponse">
+
+      <wsdl:part element="impl:getCBAStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="makeCallRequest">
+
+      <wsdl:part element="impl:makeCall" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCBAStatusRequest">
+
+      <wsdl:part element="impl:getCBAStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CBAManager">
+
+      <wsdl:operation name="getCBAStatus">
+
+         <wsdl:input message="impl:getCBAStatusRequest" name="getCBAStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCBAStatusResponse" name="getCBAStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="makeCall">
+
+         <wsdl:input message="impl:makeCallRequest" name="makeCallRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:makeCallResponse" name="makeCallResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setResult">
+
+         <wsdl:input message="impl:setResultRequest" name="setResultRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setResultResponse" name="setResultResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CBAManagerSoapBinding" type="impl:CBAManager">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCBAStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCBAStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCBAStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="makeCall">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="makeCallRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="makeCallResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setResult">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setResultRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setResultResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CBAManagerService">
+
+      <wsdl:port binding="impl:CBAManagerSoapBinding" name="CBAManager">
+
+         <wsdlsoap:address location="http://localhost:7080/CBAWebservice/services/CBAManager"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

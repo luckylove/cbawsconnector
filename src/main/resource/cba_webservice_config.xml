@@ -1,0 +1,38 @@
+<resources>
+    <environments active="UAT">
+        <env name="UAT">
+            <webService>
+                <service name="makeCall">
+                    <endpoint>
+                        <![CDATA[http://localhost:8888/index.jsp]]>
+                    </endpoint>
+                    <username></username>
+                    <password></password>
+                    <params>
+                        <param name="uui" value="2"/>
+                        <param name="media" value="2"/>
+                        <param name="contact" value="1"/>
+                        <param name="agent" value="2"/>
+                        <param name="alert" value=""/>
+                        <param name="userinfo" value="12"/>
+                    </params>
+                </service>
+
+                <service name="getCBAStatus">
+                    <endpoint>http://10.251.54.35:7100/IVRCallCenter/Proxy_Services/A_GetCCCustInfo</endpoint>
+                    <username>ivrccusr2</username>
+                    <password>IVRCC#app</password>
+                    <params>
+                    </params>
+                </service>
+
+
+
+            </webService>
+        </env>
+        <env name="PRO">
+            <webService>
+            </webService>
+        </env>
+    </environments>
+</resources>
