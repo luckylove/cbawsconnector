@@ -49,7 +49,7 @@ public class GetCBA {
                 AISUtils.overrideFromParams(model, params);
                 AISLogUtil.printInput(logger, _sessionId, "makeCall", cf, null, model);
 
-                int i = svc.makeCall(model.getUui(), model.getMedia(), model.getContact(), model.getAgent(), model.getAlert(), model.getUserinfo());
+                int i = svc.makeCall(model.getContact(), model.getAgent(), model.getAlert(), model.getQueuing(), model.getUui());
                 result.setResult(i);
 
             } catch (Exception e) {
@@ -67,11 +67,11 @@ public class GetCBA {
     }
 
 
-    public static WSObject<Integer> getCBAStatus(String _sessionId, WebServiceConfig configs) {
+    public static WSObject<String> getCBAStatus(String _sessionId, WebServiceConfig configs, String uui) {
 
         Service cf = configs.looupService("getCBAStatus");
 
-        WSObject result = new WSObject();
+        WSObject<String> result = new WSObject<String>();
         if (cf != null) {
             try {
                 CBAManagerServiceLocator locator = new CBAManagerServiceLocator();
@@ -84,9 +84,13 @@ public class GetCBA {
                     svc.setPassword(cf.getPassword());
                 }
                 svc.setTimeout(cf.getTimeout());
+                Map<String, Param> params = cf.getParams();
+                if (uui == null && params.get("uui") != null) {
+                    uui = params.get("uui").getValue();
+                }
                 //override by default param
-                AISLogUtil.printInput(logger, _sessionId, "getCBAStatus", cf, null, null);
-                int i = svc.getCBAStatus();
+                AISLogUtil.printInput(logger, _sessionId, "getCBAStatus", cf, null, uui);
+                String i = svc.getCBAStatus(uui);
                 result.setResult(i);
 
             } catch (Exception e) {

@@ -98,8 +98,8 @@ public class AISWService {
     }
 
 
-    public static WSObject<Integer> getCBAStatus(String _sessionId) {
-        return GetCBA.getCBAStatus(_sessionId, activeEnv.getWebServiceConfig());
+    public static WSObject<String> getCBAStatus(String _sessionId, String uui) {
+        return GetCBA.getCBAStatus(_sessionId, activeEnv.getWebServiceConfig(), uui);
     }
 
 

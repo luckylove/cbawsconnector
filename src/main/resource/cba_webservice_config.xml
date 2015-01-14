@@ -23,6 +23,7 @@
                     <username>ivrccusr2</username>
                     <password>IVRCC#app</password>
                     <params>
+                        <param name="uui" value="2"/>
                     </params>
                 </service>
 

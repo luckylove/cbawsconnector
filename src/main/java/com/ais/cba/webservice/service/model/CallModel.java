@@ -12,7 +12,9 @@ public class CallModel {
     java.lang.String contact;
     java.lang.String agent;
     java.lang.String alert;
-    java.lang.String userinfo;
+    java.lang.String queuing;
+
+
 
     public String getUui() {
         return uui;
@@ -54,11 +56,11 @@ public class CallModel {
         this.alert = alert;
     }
 
-    public String getUserinfo() {
-        return userinfo;
+    public String getQueuing() {
+        return queuing;
     }
 
-    public void setUserinfo(String userinfo) {
-        this.userinfo = userinfo;
+    public void setQueuing(String queuing) {
+        this.queuing = queuing;
     }
 }
