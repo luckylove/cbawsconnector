@@ -9,7 +9,7 @@ public class MainTest {
     public static void main(String[] args) throws Exception {
         //AISWService.initService();
 
-        AISWService.getCBAStatus("aa", "33");
+        AISWService.makeCall("aa", null);
     }
 
 
