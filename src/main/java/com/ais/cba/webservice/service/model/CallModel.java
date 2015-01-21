@@ -8,7 +8,7 @@ package com.ais.cba.webservice.service.model;
 public class CallModel {
 
     java.lang.String uui;
-    java.lang.String media;
+    java.lang.String custseg;
     java.lang.String contact;
     java.lang.String agent;
     java.lang.String alert;
@@ -24,12 +24,12 @@ public class CallModel {
         this.uui = uui;
     }
 
-    public String getMedia() {
-        return media;
+    public String getCustseg() {
+        return custseg;
     }
 
-    public void setMedia(String media) {
-        this.media = media;
+    public void setCustseg(String custseg) {
+        this.custseg = custseg;
     }
 
     public String getContact() {

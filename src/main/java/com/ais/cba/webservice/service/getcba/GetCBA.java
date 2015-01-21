@@ -49,7 +49,7 @@ public class GetCBA {
                 AISUtils.overrideFromParams(model, params);
                 AISLogUtil.printInput(logger, _sessionId, "makeCall", cf, null, model);
 
-                int i = svc.makeCall(model.getContact(), model.getAgent(), model.getAlert(), model.getQueuing(), model.getUui());
+                int i = svc.makeCall(model.getContact(), model.getAgent(), model.getAlert(), model.getQueuing(), model.getUui(), model.getCustseg());
                 result.setResult(i);
 
             } catch (Exception e) {

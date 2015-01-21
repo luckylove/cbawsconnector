@@ -10,11 +10,10 @@
                     <password></password>
                     <params>
                         <param name="uui" value="2"/>
-                        <param name="media" value="2"/>
+                        <param name="custseg" value="2"/>
                         <param name="contact" value="1"/>
                         <param name="agent" value="2"/>
                         <param name="alert" value=""/>
-                        <param name="userinfo" value="12"/>
                     </params>
                 </service>
 

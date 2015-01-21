@@ -12,6 +12,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="alert" type="xsd:string"/>
       <element name="queuing" type="xsd:string"/>
       <element name="uui" type="xsd:string"/>
+      <element name="custseg" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
